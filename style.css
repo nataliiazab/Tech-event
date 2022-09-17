@@ -1,11 +1,11 @@
 body {
-  background-color: #cc66ff;
+  background-color: #7F95D1;
   font-size: 1em;
   font-family: monospace;
 }
 
 fieldset {
-  background-color: #ff9933;
+  background-color: #FF82A9;
   padding-top: 25px;
   padding-bottom: 25px;
 }
@@ -23,7 +23,7 @@ h2 {
 }
 
 #survey-form {
-  background-color: #cc66ff;
+  background-color: #FF82A9;
   font-size: 1.1em;
   text-align: center;
 }
