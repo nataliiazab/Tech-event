@@ -175,6 +175,52 @@ element_dropdown.style.backgroundColor = '#ff99ff';
         
 let element_dropdown1 = document.getElementById('dropdown1');
 element_dropdown1.style.backgroundColor = '#ff99ff';
+        var expenses, budget, earnings;
+
+function getNumberOrString(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return value
+  } else {
+    return number_value
+  }
+}
+
+
+expenses = [];
+budget = [];
+earnings = [];
+
+
+document.getElementById('button').addEventListener('click', (event) => {
+  budget.unshift(getNumberOrString(document.getElementById('input').value));
+  let element_number_balance = document.getElementById('number_balance');
+  element_number_balance.innerText = budget.reduce((a,b) => a+b, 0);
+  if (getNumberOrString(document.getElementById('input').value) > 0) {
+    earnings.unshift(getNumberOrString(document.getElementById('input').value));
+    let element_number_earnings = document.getElementById('number_earnings');
+    element_number_earnings.innerText = earnings.reduce((a,b) => a+b, 0);
+    let element_earnings = document.getElementById('earnings');
+    let new_li = document.createElement('li');
+    new_li.innerText = getNumberOrString(document.getElementById('input').value);
+
+    element_earnings.appendChild(new_li);
+  }
+  if (!(getNumberOrString(document.getElementById('input').value) > 0)) {
+    expenses.unshift(getNumberOrString(document.getElementById('input').value));
+    let element_number_expenses = document.getElementById('number_expenses');
+    element_number_expenses.innerText = expenses.reduce((a,b) => a+b, 0);
+    let element_expenses = document.getElementById('expenses');
+    let new_li2 = document.createElement('li');
+    new_li2.innerText = getNumberOrString(document.getElementById('input').value);
+
+    element_expenses.appendChild(new_li2);
+  }
+
+});
+
+
   </script>
     
   </body>
